@@ -17,6 +17,9 @@ public class GameSystem : MonoBehaviour
     public GameObject selectedGameObject;
     public GameObject door;
 
+    //itemlist
+    public GameObject keyforList;
+
     private bool openDoor = false;
 
 
@@ -25,6 +28,9 @@ public class GameSystem : MonoBehaviour
     {
         eventsystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         door = GameObject.Find("Door");
+
+        keyforList = GameObject.Find("KeyforList");
+        keyforList.SetActive(false);
     }
 
     // Update is called once per frame
@@ -49,7 +55,6 @@ public class GameSystem : MonoBehaviour
 
     void doorRotation()
     {
-        Debug.Log(Mathf.DeltaAngle(door.transform.eulerAngles.y, 180f));
         if (Mathf.DeltaAngle(door.transform.eulerAngles.y, 180f) > 0.1f)
         {
             door.transform.Rotate(new Vector3(0f, 0.3f, 0f));
@@ -74,6 +79,7 @@ public class GameSystem : MonoBehaviour
                     Debug.Log("鍵取得");
                     GameObject.Find("Key").SetActive(false);
                     openDoor = true;
+                    keyforList.SetActive(true);
                     break;
             }
         }
