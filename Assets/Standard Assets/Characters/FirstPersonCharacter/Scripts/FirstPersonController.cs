@@ -61,6 +61,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+            // tuika
+            if (Input.GetKey(KeyCode.Z))
+            {
+                m_CharacterController.height += 0.06f;
+            }
+            if (Input.GetKey(KeyCode.X) & m_CharacterController.height > 0.1)
+            {
+                m_CharacterController.height -= 0.06f;
+            }
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
