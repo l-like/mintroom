@@ -49,13 +49,16 @@ public class ItemSelectCamera : MonoBehaviour {
             }
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (nowItem != -1)
         {
-            transform.RotateAround(targetPos, Vector3.up, Time.deltaTime * 150f);
-        }
-        if (Input.GetKey(KeyCode.E))
-        {
-            transform.RotateAround(targetPos, Vector3.up, -Time.deltaTime * 150f);
+            if (Input.GetKey(KeyCode.Q))
+            {
+                transform.RotateAround(targetPos, Vector3.up, Time.deltaTime * 150f);
+            }
+            if (Input.GetKey(KeyCode.E))
+            {
+                transform.RotateAround(targetPos, Vector3.up, -Time.deltaTime * 150f);
+            }
         }
     }
 }

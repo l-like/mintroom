@@ -5,19 +5,29 @@ using UnityEngine;
 public class ChatWindow : MonoBehaviour {
 
     GameObject chat;
+    bool onoff = true;
 
 	// Use this for initialization
 	void Start () {
         chat = GameObject.Find("ChatCanvas");
-        chat.SetActive(true);
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Debug.Log(chat.activeSelf);
-            chat.SetActive(!chat.activeSelf);
+            //Debug.Log(chat.activeSelf);
+            if (onoff == true)
+            {
+                chat.SetActive(false);
+                onoff = false;
+            }
+            else
+            {
+                chat.SetActive(true);
+                onoff = true;
+            }
         }
 	}
 }
