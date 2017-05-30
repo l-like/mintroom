@@ -44,18 +44,18 @@ public class ItemSelectCamera : MonoBehaviour {
                     Debug.Log("2 pressed");
                     break;
                 default:
-                    Debug.Log("otherkeys");
+                    //Debug.Log("otherkeys");
                     break;
             }
         }
 
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.RotateAround(targetPos, Vector3.up, Time.deltaTime * 100f);
+            transform.RotateAround(targetPos, Vector3.up, Time.deltaTime * 150f);
         }
         if (Input.GetKey(KeyCode.E))
         {
-            transform.RotateAround(targetPos, Vector3.up, -Time.deltaTime * 100f);
+            transform.RotateAround(targetPos, Vector3.up, -Time.deltaTime * 150f);
         }
     }
 }

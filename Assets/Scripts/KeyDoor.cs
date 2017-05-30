@@ -76,6 +76,8 @@ public class KeyDoor : MonoBehaviour {
                     openDoor = true;
                     keyforList.SetActive(true);
                     break;
+                default:
+                    break;
             }
         }
     }
